@@ -8,7 +8,7 @@
 	<title>File plugin-name/admin/includes/PointerPlus/class-pointerplus.php | Wordpress Plugin Boilerplate Powered</title>
 
 	<script type="text/javascript" src="resources/combined.js?117538352"></script>
-	<script type="text/javascript" src="elementlist.js?1625582031"></script>
+	<script type="text/javascript" src="elementlist.js?2916095971"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
 
 </head>
@@ -52,6 +52,7 @@
 			<h3>Functions</h3>
 			<ul>
 				<li><a href="function-custom_initial_pointers.html">custom_initial_pointers</a></li>
+				<li><a href="function-custom_phpcode_thickbox.html">custom_phpcode_thickbox</a></li>
 				<li><a href="function-pointerplus_load_localization.html">pointerplus_load_localization</a></li>
 			</ul>
 		</div>
@@ -184,7 +185,7 @@
 </span><span id="92" class="l"><a class="l" href="#92"> 92: </a>                } <span class="php-keyword1">else</span> {
 </span><span id="93" class="l"><a class="l" href="#93"> 93: </a>                    <span class="php-keyword1">new</span> WP_Error( <span class="php-quote">'broke'</span>, __( <span class="php-quote">'PointerPlus Error: pages is not an array!'</span> ) );
 </span><span id="94" class="l"><a class="l" href="#94"> 94: </a>                }
-</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>            } 
+</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>            }
 </span><span id="96" class="l"><a class="l" href="#96"> 96: </a>        }
 </span><span id="97" class="l"><a class="l" href="#97"> 97: </a>
 </span><span id="98" class="l"><a class="l" href="#98"> 98: </a>        <span class="php-keyword1">return</span> <span class="php-var">$pointers</span>;
@@ -207,23 +208,45 @@
 </span><span id="115" class="l"><a class="l" href="#115">115: </a>        <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>( <span class="php-var">$diff</span> ) ) {
 </span><span id="116" class="l"><a class="l" href="#116">116: </a>            <span class="php-var">$this</span>-&gt;pointers = <span class="php-var">$diff</span>;
 </span><span id="117" class="l"><a class="l" href="#117">117: </a>            add_action( <span class="php-quote">'admin_enqueue_scripts'</span>, <span class="php-keyword1">array</span>( <span class="php-var">$this</span>, <span class="php-quote">'admin_enqueue_assets'</span> ) );
-</span><span id="118" class="l"><a class="l" href="#118">118: </a>        }
-</span><span id="119" class="l"><a class="l" href="#119">119: </a>    }
-</span><span id="120" class="l"><a class="l" href="#120">120: </a>
-</span><span id="121" class="l"><a class="l" href="#121">121: </a>    <span class="php-comment">/**
-</span></span><span id="122" class="l"><a class="l" href="#122">122: </a><span class="php-comment">     * Enqueue pointer styles and scripts to display them.
-</span></span><span id="123" class="l"><a class="l" href="#123">123: </a><span class="php-comment">     *
-</span></span><span id="124" class="l"><a class="l" href="#124">124: </a><span class="php-comment">     * @since 1.0.0
-</span></span><span id="125" class="l"><a class="l" href="#125">125: </a><span class="php-comment">     */</span>
-</span><span id="126" class="l"><a class="l" href="#126">126: </a>    <span class="php-keyword1">function</span> <a id="_admin_enqueue_assets" href="#_admin_enqueue_assets">admin_enqueue_assets</a>() {
-</span><span id="127" class="l"><a class="l" href="#127">127: </a>        <span class="php-var">$base_url</span> = plugins_url( <span class="php-quote">''</span>, __FILE__ );
-</span><span id="128" class="l"><a class="l" href="#128">128: </a>        wp_enqueue_style( <span class="php-var">$this</span>-&gt;prefix, <span class="php-var">$base_url</span> . <span class="php-quote">'/pointerplus.css'</span>, <span class="php-keyword1">array</span>( <span class="php-quote">'wp-pointer'</span> ) );
-</span><span id="129" class="l"><a class="l" href="#129">129: </a>        wp_enqueue_script( <span class="php-var">$this</span>-&gt;prefix, <span class="php-var">$base_url</span> . <span class="php-quote">'/pointerplus.js'</span>, <span class="php-keyword1">array</span>( <span class="php-quote">'wp-pointer'</span> ) );
-</span><span id="130" class="l"><a class="l" href="#130">130: </a>        wp_localize_script( <span class="php-var">$this</span>-&gt;prefix, <span class="php-quote">'pointerplus'</span>, apply_filters( <span class="php-quote">'pointerplus_js_vars'</span>, <span class="php-var">$this</span>-&gt;pointers ) );
-</span><span id="131" class="l"><a class="l" href="#131">131: </a>    }
-</span><span id="132" class="l"><a class="l" href="#132">132: </a>
-</span><span id="133" class="l"><a class="l" href="#133">133: </a>}
-</span><span id="134" class="l"><a class="l" href="#134">134: </a></span></code></pre>
+</span><span id="118" class="l"><a class="l" href="#118">118: </a>
+</span><span id="119" class="l"><a class="l" href="#119">119: </a>            <span class="php-keyword1">foreach</span> ( <span class="php-var">$diff</span> <span class="php-keyword1">as</span> <span class="php-var">$pointer</span> ) {
+</span><span id="120" class="l"><a class="l" href="#120">120: </a>                <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>( <span class="php-var">$pointer</span>[ <span class="php-quote">'phpcode'</span> ] ) ) {
+</span><span id="121" class="l"><a class="l" href="#121">121: </a>                    add_action( <span class="php-quote">'admin_notices'</span>, <span class="php-var">$pointer</span>[ <span class="php-quote">'phpcode'</span> ] );
+</span><span id="122" class="l"><a class="l" href="#122">122: </a>                }
+</span><span id="123" class="l"><a class="l" href="#123">123: </a>            }
+</span><span id="124" class="l"><a class="l" href="#124">124: </a>        }
+</span><span id="125" class="l"><a class="l" href="#125">125: </a>    }
+</span><span id="126" class="l"><a class="l" href="#126">126: </a>
+</span><span id="127" class="l"><a class="l" href="#127">127: </a>    <span class="php-comment">/**
+</span></span><span id="128" class="l"><a class="l" href="#128">128: </a><span class="php-comment">     * Enqueue pointer styles and scripts to display them.
+</span></span><span id="129" class="l"><a class="l" href="#129">129: </a><span class="php-comment">     *
+</span></span><span id="130" class="l"><a class="l" href="#130">130: </a><span class="php-comment">     * @since 1.0.0
+</span></span><span id="131" class="l"><a class="l" href="#131">131: </a><span class="php-comment">     */</span>
+</span><span id="132" class="l"><a class="l" href="#132">132: </a>    <span class="php-keyword1">function</span> <a id="_admin_enqueue_assets" href="#_admin_enqueue_assets">admin_enqueue_assets</a>() {
+</span><span id="133" class="l"><a class="l" href="#133">133: </a>        <span class="php-var">$base_url</span> = plugins_url( <span class="php-quote">''</span>, __FILE__ );
+</span><span id="134" class="l"><a class="l" href="#134">134: </a>        wp_enqueue_style( <span class="php-var">$this</span>-&gt;prefix, <span class="php-var">$base_url</span> . <span class="php-quote">'/pointerplus.css'</span>, <span class="php-keyword1">array</span>( <span class="php-quote">'wp-pointer'</span> ) );
+</span><span id="135" class="l"><a class="l" href="#135">135: </a>        wp_enqueue_script( <span class="php-var">$this</span>-&gt;prefix, <span class="php-var">$base_url</span> . <span class="php-quote">'/pointerplus.js'</span>, <span class="php-keyword1">array</span>( <span class="php-quote">'wp-pointer'</span> ) );
+</span><span id="136" class="l"><a class="l" href="#136">136: </a>        wp_localize_script( <span class="php-var">$this</span>-&gt;prefix, <span class="php-quote">'pointerplus'</span>, apply_filters( <span class="php-quote">'pointerplus_js_vars'</span>, <span class="php-var">$this</span>-&gt;pointers ) );
+</span><span id="137" class="l"><a class="l" href="#137">137: </a>    }
+</span><span id="138" class="l"><a class="l" href="#138">138: </a>
+</span><span id="139" class="l"><a class="l" href="#139">139: </a>    <span class="php-keyword1">function</span> <a id="_reset_pointer" href="#_reset_pointer">reset_pointer</a>() {
+</span><span id="140" class="l"><a class="l" href="#140">140: </a>        add_action( <span class="php-quote">'current_screen'</span>, <span class="php-keyword1">array</span>( <span class="php-var">$this</span>, <span class="php-quote">'_reset_pointer'</span> ), <span class="php-num">0</span> );
+</span><span id="141" class="l"><a class="l" href="#141">141: </a>    }
+</span><span id="142" class="l"><a class="l" href="#142">142: </a>    
+</span><span id="143" class="l"><a class="l" href="#143">143: </a>    <span class="php-keyword1">function</span> <a id="__reset_pointer" href="#__reset_pointer">_reset_pointer</a>() {
+</span><span id="144" class="l"><a class="l" href="#144">144: </a>        <span class="php-var">$pointers</span> = <span class="php-keyword2">explode</span>( <span class="php-quote">','</span>, get_user_meta( get_current_user_id(), <span class="php-quote">'dismissed_wp_pointers'</span>, <span class="php-keyword1">true</span> ) );
+</span><span id="145" class="l"><a class="l" href="#145">145: </a>        <span class="php-keyword1">foreach</span> ( <span class="php-var">$pointers</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$pointer</span> ) {
+</span><span id="146" class="l"><a class="l" href="#146">146: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword2">strpos</span>( <span class="php-var">$pointer</span>, <span class="php-var">$this</span>-&gt;prefix ) === <span class="php-num">0</span> ) {
+</span><span id="147" class="l"><a class="l" href="#147">147: </a>                <span class="php-keyword1">unset</span>( <span class="php-var">$pointers</span>[ <span class="php-var">$key</span> ] );
+</span><span id="148" class="l"><a class="l" href="#148">148: </a>            }
+</span><span id="149" class="l"><a class="l" href="#149">149: </a>        }
+</span><span id="150" class="l"><a class="l" href="#150">150: </a>        <span class="php-var">$meta</span> = <span class="php-keyword2">implode</span>(<span class="php-quote">','</span>, <span class="php-var">$pointers</span>);
+</span><span id="151" class="l"><a class="l" href="#151">151: </a>        
+</span><span id="152" class="l"><a class="l" href="#152">152: </a>        update_user_meta( get_current_user_id(), <span class="php-quote">'dismissed_wp_pointers'</span>, <span class="php-var">$meta</span> );
+</span><span id="153" class="l"><a class="l" href="#153">153: </a>    }
+</span><span id="154" class="l"><a class="l" href="#154">154: </a>
+</span><span id="155" class="l"><a class="l" href="#155">155: </a>}
+</span><span id="156" class="l"><a class="l" href="#156">156: </a></span></code></pre>
 
 	<div id="footer">
 		Wordpress Plugin Boilerplate Powered API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

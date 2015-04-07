@@ -573,13 +573,13 @@
 </span><span id="480" class="l"><a class="l" href="#480">480: </a>        <span class="php-keyword1">if</span> ( !current_user_can( <span class="php-quote">'manage_options'</span> ) ) {
 </span><span id="481" class="l"><a class="l" href="#481">481: </a>            <span class="php-keyword1">return</span>;
 </span><span id="482" class="l"><a class="l" href="#482">482: </a>        }
-</span><span id="483" class="l"><a class="l" href="#483">483: </a>        <span class="php-var">$extension</span> = <span class="php-keyword2">end</span>( <span class="php-keyword2">explode</span>( <span class="php-quote">'.'</span>, <span class="php-var">$_FILES</span>[ <span class="php-quote">'import_file'</span> ][ <span class="php-quote">'name'</span> ] ) );
+</span><span id="483" class="l"><a class="l" href="#483">483: </a>        <span class="php-var">$extension</span> = <span class="php-keyword2">end</span>( <span class="php-keyword2">explode</span>( <span class="php-quote">'.'</span>, <span class="php-var">$_FILES</span>[ <span class="php-quote">'pn_import_file'</span> ][ <span class="php-quote">'name'</span> ] ) );
 </span><span id="484" class="l"><a class="l" href="#484">484: </a>
 </span><span id="485" class="l"><a class="l" href="#485">485: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$extension</span> != <span class="php-quote">'json'</span> ) {
 </span><span id="486" class="l"><a class="l" href="#486">486: </a>            wp_die( __( <span class="php-quote">'Please upload a valid .json file'</span>, <span class="php-var">$this</span>-&gt;plugin_slug ) );
 </span><span id="487" class="l"><a class="l" href="#487">487: </a>        }
 </span><span id="488" class="l"><a class="l" href="#488">488: </a>
-</span><span id="489" class="l"><a class="l" href="#489">489: </a>        <span class="php-var">$import_file</span> = <span class="php-var">$_FILES</span>[ <span class="php-quote">'import_file'</span> ][ <span class="php-quote">'tmp_name'</span> ];
+</span><span id="489" class="l"><a class="l" href="#489">489: </a>        <span class="php-var">$import_file</span> = <span class="php-var">$_FILES</span>[ <span class="php-quote">'pn_import_file'</span> ][ <span class="php-quote">'tmp_name'</span> ];
 </span><span id="490" class="l"><a class="l" href="#490">490: </a>
 </span><span id="491" class="l"><a class="l" href="#491">491: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword1">empty</span>( <span class="php-var">$import_file</span> ) ) {
 </span><span id="492" class="l"><a class="l" href="#492">492: </a>            wp_die( __( <span class="php-quote">'Please upload a file to import'</span>, <span class="php-var">$this</span>-&gt;plugin_slug ) );

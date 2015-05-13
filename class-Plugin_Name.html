@@ -144,7 +144,7 @@ functionality, then refer to <code>class-plugin-name-admin.php</code></p>
 href="mailto:email&#64;example.com">email&#64;<!-- -->example.com</a>&gt;<br>
 				<b>TODO::</b>
 				Rename this class to a proper name for your plugin.<br>
-		<b>Located at</b> <a href="source-class-Plugin_Name.html#13-480" title="Go to source code">plugin-name/public/class-plugin-name.php</a><br>
+		<b>Located at</b> <a href="source-class-Plugin_Name.html#13-497" title="Go to source code">plugin-name/public/class-plugin-name.php</a><br>
 	</div>
 
 
@@ -162,7 +162,7 @@ href="mailto:email&#64;example.com">email&#64;<!-- -->example.com</a>&gt;<br>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_plugin_slug">#</a>
-		<code><a href="source-class-Plugin_Name.html#158-167" title="Go to source code">get_plugin_slug</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#160-169" title="Go to source code">get_plugin_slug</a>( )</code>
 
 		<div class="description short">
 			
@@ -203,7 +203,7 @@ href="mailto:email&#64;example.com">email&#64;<!-- -->example.com</a>&gt;<br>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_plugin_name">#</a>
-		<code><a href="source-class-Plugin_Name.html#169-178" title="Go to source code">get_plugin_name</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#171-180" title="Go to source code">get_plugin_name</a>( )</code>
 
 		<div class="description short">
 			
@@ -244,7 +244,7 @@ href="mailto:email&#64;example.com">email&#64;<!-- -->example.com</a>&gt;<br>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_plugin_version">#</a>
-		<code><a href="source-class-Plugin_Name.html#180-189" title="Go to source code">get_plugin_version</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#182-191" title="Go to source code">get_plugin_version</a>( )</code>
 
 		<div class="description short">
 			
@@ -285,7 +285,7 @@ href="mailto:email&#64;example.com">email&#64;<!-- -->example.com</a>&gt;<br>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_cpts">#</a>
-		<code><a href="source-class-Plugin_Name.html#191-200" title="Go to source code">get_cpts</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#193-202" title="Go to source code">get_cpts</a>( )</code>
 
 		<div class="description short">
 			
@@ -326,7 +326,7 @@ href="mailto:email&#64;example.com">email&#64;<!-- -->example.com</a>&gt;<br>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_instance">#</a>
-		<code><a href="source-class-Plugin_Name.html#202-217" title="Go to source code">get_instance</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#204-219" title="Go to source code">get_instance</a>( )</code>
 
 		<div class="description short">
 			
@@ -367,7 +367,7 @@ href="mailto:email&#64;example.com">email&#64;<!-- -->example.com</a>&gt;<br>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_activate">#</a>
-		<code><a href="source-class-Plugin_Name.html#219-251" title="Go to source code">activate</a>( <span>boolean <var>$network_wide</var></span> )</code>
+		<code><a href="source-class-Plugin_Name.html#221-253" title="Go to source code">activate</a>( <span>boolean <var>$network_wide</var></span> )</code>
 
 		<div class="description short">
 			
@@ -410,7 +410,7 @@ WPMU is disabled or plugin is activated on an individual blog.</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_deactivate">#</a>
-		<code><a href="source-class-Plugin_Name.html#253-285" title="Go to source code">deactivate</a>( <span>boolean <var>$network_wide</var></span> )</code>
+		<code><a href="source-class-Plugin_Name.html#255-287" title="Go to source code">deactivate</a>( <span>boolean <var>$network_wide</var></span> )</code>
 
 		<div class="description short">
 			
@@ -453,7 +453,7 @@ WPMU is disabled or plugin is deactivated on an individual blog.</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_activate_new_site">#</a>
-		<code><a href="source-class-Plugin_Name.html#287-303" title="Go to source code">activate_new_site</a>( <span>integer <var>$blog_id</var></span> )</code>
+		<code><a href="source-class-Plugin_Name.html#289-305" title="Go to source code">activate_new_site</a>( <span>integer <var>$blog_id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -484,6 +484,48 @@ WPMU is disabled or plugin is deactivated on an individual blog.</dd>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="filter_search" id="_filter_search">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_filter_search">#</a>
+		<code><a href="source-class-Plugin_Name.html#307-321" title="Go to source code">filter_search</a>( <span>object <var>$query</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Add support for custom CPT on the search box</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Add support for custom CPT on the search box</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$query</var></dt>
+					<dd><code>object</code><br>$query</dd>
+				</dl></div>
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0.0<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="load_plugin_textdomain" id="_load_plugin_textdomain">
 
 		<td class="attributes"><code>
@@ -495,7 +537,7 @@ WPMU is disabled or plugin is deactivated on an individual blog.</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_load_plugin_textdomain">#</a>
-		<code><a href="source-class-Plugin_Name.html#374-385" title="Go to source code">load_plugin_textdomain</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#391-402" title="Go to source code">load_plugin_textdomain</a>( )</code>
 
 		<div class="description short">
 			
@@ -532,7 +574,7 @@ WPMU is disabled or plugin is deactivated on an individual blog.</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_enqueue_styles">#</a>
-		<code><a href="source-class-Plugin_Name.html#387-394" title="Go to source code">enqueue_styles</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#404-411" title="Go to source code">enqueue_styles</a>( )</code>
 
 		<div class="description short">
 			
@@ -569,7 +611,7 @@ WPMU is disabled or plugin is deactivated on an individual blog.</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_enqueue_scripts">#</a>
-		<code><a href="source-class-Plugin_Name.html#396-403" title="Go to source code">enqueue_scripts</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#413-420" title="Go to source code">enqueue_scripts</a>( )</code>
 
 		<div class="description short">
 			
@@ -606,7 +648,7 @@ WPMU is disabled or plugin is deactivated on an individual blog.</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_enqueue_js_vars">#</a>
-		<code><a href="source-class-Plugin_Name.html#405-415" title="Go to source code">enqueue_js_vars</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#422-432" title="Go to source code">enqueue_js_vars</a>( )</code>
 
 		<div class="description short">
 			
@@ -643,7 +685,7 @@ WPMU is disabled or plugin is deactivated on an individual blog.</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add_pn_class">#</a>
-		<code><a href="source-class-Plugin_Name.html#417-425" title="Go to source code">add_pn_class</a>( <span>mixed <var>$classes</var></span> )</code>
+		<code><a href="source-class-Plugin_Name.html#434-442" title="Go to source code">add_pn_class</a>( <span>mixed <var>$classes</var></span> )</code>
 
 		<div class="description short">
 			
@@ -680,7 +722,7 @@ WPMU is disabled or plugin is deactivated on an individual blog.</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_load_content_demo">#</a>
-		<code><a href="source-class-Plugin_Name.html#427-438" title="Go to source code">load_content_demo</a>( <span>mixed <var>$original_template</var></span> )</code>
+		<code><a href="source-class-Plugin_Name.html#444-455" title="Go to source code">load_content_demo</a>( <span>mixed <var>$original_template</var></span> )</code>
 
 		<div class="description short">
 			
@@ -717,7 +759,7 @@ WPMU is disabled or plugin is deactivated on an individual blog.</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_action_method_name">#</a>
-		<code><a href="source-class-Plugin_Name.html#440-451" title="Go to source code">action_method_name</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#457-468" title="Go to source code">action_method_name</a>( )</code>
 
 		<div class="description short">
 			
@@ -761,7 +803,7 @@ href="http://codex.wordpress.org/Plugin_API/Action_Reference">http://codex.wordp
 
 		<td class="name"><div>
 		<a class="anchor" href="#_filter_method_name">#</a>
-		<code><a href="source-class-Plugin_Name.html#453-464" title="Go to source code">filter_method_name</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#470-481" title="Go to source code">filter_method_name</a>( )</code>
 
 		<div class="description short">
 			
@@ -805,7 +847,7 @@ href="http://codex.wordpress.org/Plugin_API/Filter_Reference">http://codex.wordp
 
 		<td class="name"><div>
 		<a class="anchor" href="#_shortcode_method_name">#</a>
-		<code><a href="source-class-Plugin_Name.html#466-478" title="Go to source code">shortcode_method_name</a>( )</code>
+		<code><a href="source-class-Plugin_Name.html#483-495" title="Go to source code">shortcode_method_name</a>( )</code>
 
 		<div class="description short">
 			
@@ -1023,18 +1065,18 @@ plugin.<br>
 				<a href="source-class-Plugin_Name.html#82-102" title="Go to source code"><var>$plugin_roles</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>(
-    <span class="php-quote">'editor'</span> =&gt; <span class="php-keyword1">array</span>(
-        <span class="php-quote">'edit_demo'</span> =&gt; <span class="php-keyword1">true</span>,
-        <span class="php-quote">'edit_others_demo'</span> =&gt; <span class="php-keyword1">true</span>,
-    ),
-    <span class="php-quote">'author'</span> =&gt; <span class="php-keyword1">array</span>(
-        <span class="php-quote">'edit_demo'</span> =&gt; <span class="php-keyword1">true</span>,
-        <span class="php-quote">'edit_others_demo'</span> =&gt; <span class="php-keyword1">false</span>,
-    ),
-    <span class="php-quote">'subscriber'</span> =&gt; <span class="php-keyword1">array</span>(
-        <span class="php-quote">'edit_demo'</span> =&gt; <span class="php-keyword1">false</span>,
-        <span class="php-quote">'edit_others_demo'</span> =&gt; <span class="php-keyword1">false</span>,
-    ),
+	<span class="php-quote">'editor'</span> =&gt; <span class="php-keyword1">array</span>(
+		<span class="php-quote">'edit_demo'</span> =&gt; <span class="php-keyword1">true</span>,
+		<span class="php-quote">'edit_others_demo'</span> =&gt; <span class="php-keyword1">true</span>,
+	),
+	<span class="php-quote">'author'</span> =&gt; <span class="php-keyword1">array</span>(
+		<span class="php-quote">'edit_demo'</span> =&gt; <span class="php-keyword1">true</span>,
+		<span class="php-quote">'edit_others_demo'</span> =&gt; <span class="php-keyword1">false</span>,
+	),
+	<span class="php-quote">'subscriber'</span> =&gt; <span class="php-keyword1">array</span>(
+		<span class="php-quote">'edit_demo'</span> =&gt; <span class="php-keyword1">false</span>,
+		<span class="php-quote">'edit_others_demo'</span> =&gt; <span class="php-keyword1">false</span>,
+	),
 )</code></td>
 		<td class="description"><div>
 			<a href="#$plugin_roles" class="anchor">#</a>

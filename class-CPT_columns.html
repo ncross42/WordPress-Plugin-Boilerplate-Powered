@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class CPT_columns | Wordpress Plugin Boilerplate Powered</title>
+
+	<script type="text/javascript" src="resources/combined.js?117538352"></script>
+	<script type="text/javascript" src="elementlist.js?319261256"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active"><a href="package-None.html">None</a>
+						</li>
+				<li><a href="package-PHP.html">PHP</a>
+						</li>
+				<li><a href="package-Plugin.html">Plugin<span></span></a>
+						<ul>
+				<li><a href="package-Plugin.Name.html">Name<span></span></a>
+						<ul>
+				<li><a href="package-Plugin.Name.Admin.html">Admin</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="package-WordPress.html">WordPress<span></span></a>
+						<ul>
+				<li><a href="package-WordPress.WPH.html">WPH</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-CPT_columns.html">CPT_columns</a></li>
+				<li><a href="class-MV_My_Recent_Posts_Widget.html">MV_My_Recent_Posts_Widget</a></li>
+				<li><a href="class-My_Recent_Posts_Widget.html">My_Recent_Posts_Widget</a></li>
+				<li><a href="class-PointerPlus.html">PointerPlus</a></li>
+			</ul>
+
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-custom_initial_pointers.html">custom_initial_pointers</a></li>
+				<li><a href="function-custom_phpcode_thickbox.html">custom_phpcode_thickbox</a></li>
+				<li><a href="function-mv_my_register_widget.html">mv_my_register_widget</a></li>
+				<li><a href="function-my_register_widget.html">my_register_widget</a></li>
+				<li><a href="function-pointerplus_load_localization.html">pointerplus_load_localization</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text">
+		<input type="submit" value="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-None.html" title="Summary of None"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class CPT_columns</h1>
+
+
+	<div class="description">
+	
+<p>CPT_columns Simple class to add remove and manage admin post columns</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+				<b>Copyright:</b>
+				2013 Ohad Raz<br>
+				<b>Author:</b>
+				Ohad Raz &lt;<a
+href="mailto:admin&#64;bainternet.info">admin&#64;<!-- -->bainternet.info</a>&gt;<br>
+				<b>Version:</b>
+				0.1<br>
+		<b>Located at</b> <a href="source-class-CPT_columns.html#62-343" title="Go to source code">plugin-name/admin/includes/CPT_Columns.php</a><br>
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-CPT_columns.html#111-132" title="Go to source code">__construct</a>( <span>string <var>$cpt</var> = <span class="php-quote">''</span></span>, <span>boolean <var>$replace</var> = <span class="php-keyword1">false</span> </span> )</code>
+
+		<div class="description short">
+			
+<p>__construct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__construct</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cpt</var></dt>
+					<dd><code>string</code><br>$cpt custom post type name</dd>
+					<dt><var>$replace</var></dt>
+					<dd><code>boolean</code><br>$replace (optional) replace or add</dd>
+				</dl></div>
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Ohad Raz &lt;<a
+href="mailto:admin&#64;bainternet.info">admin&#64;<!-- -->bainternet.info</a>&gt;<br>
+				</div>
+				<h4>Since</h4>
+				<div class="list">
+						0.1<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_cpt_columns" id="__cpt_columns">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__cpt_columns">#</a>
+		<code><a href="source-class-CPT_columns.html#134-168" title="Go to source code">_cpt_columns</a>( <span>array <var>$defaults</var></span> )</code>
+
+		<div class="description short">
+			
+<p>_cpt_columns</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>_cpt_columns</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$defaults</var></dt>
+					<dd><code>array</code><br>$defaults</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Ohad Raz &lt;<a
+href="mailto:admin&#64;bainternet.info">admin&#64;<!-- -->bainternet.info</a>&gt;
+&amp; Mte90 &lt;<a
+href="mailto:mte90net&#64;gmail.com">mte90net&#64;<!-- -->gmail.com</a>&gt;<br>
+				</div>
+				<h4>Since</h4>
+				<div class="list">
+						0.2<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_cpt_columns_remove" id="__cpt_columns_remove">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__cpt_columns_remove">#</a>
+		<code><a href="source-class-CPT_columns.html#170-186" title="Go to source code">_cpt_columns_remove</a>( <span>array <var>$columns</var></span> )</code>
+
+		<div class="description short">
+			
+<p>_cpt_columns_remove</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>_cpt_columns_remove</p>
+
+<p>used to remove columns</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$columns</var></dt>
+					<dd><code>array</code><br>$columns</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Ohad Raz &lt;<a
+href="mailto:admin&#64;bainternet.info">admin&#64;<!-- -->bainternet.info</a>&gt;<br>
+				</div>
+				<h4>Since</h4>
+				<div class="list">
+						0.1<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_sortable_columns" id="__sortable_columns">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__sortable_columns">#</a>
+		<code><a href="source-class-CPT_columns.html#188-205" title="Go to source code">_sortable_columns</a>( <span>array <var>$columns</var></span> )</code>
+
+		<div class="description short">
+			
+<p>_sortable_columns</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>_sortable_columns</p>
+
+<p>sets sortable columns</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$columns</var></dt>
+					<dd><code>array</code><br>$columns</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Ohad Raz &lt;<a
+href="mailto:admin&#64;bainternet.info">admin&#64;<!-- -->bainternet.info</a>&gt;<br>
+				</div>
+				<h4>Since</h4>
+				<div class="list">
+						0.1<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_cpt_custom_column" id="__cpt_custom_column">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__cpt_custom_column">#</a>
+		<code><a href="source-class-CPT_columns.html#207-221" title="Go to source code">_cpt_custom_column</a>( <span>string <var>$column_name</var></span>, <span>integer <var>$post_id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>_cpt_custom_column</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>_cpt_custom_column</p>
+
+<p>calls do_column() when the column is set</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$column_name</var></dt>
+					<dd><code>string</code><br>$column_name column name</dd>
+					<dt><var>$post_id</var></dt>
+					<dd><code>integer</code><br>$post_id post ID</dd>
+				</dl></div>
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Ohad Raz &lt;<a
+href="mailto:admin&#64;bainternet.info">admin&#64;<!-- -->bainternet.info</a>&gt;<br>
+				</div>
+				<h4>Since</h4>
+				<div class="list">
+						0.1<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="do_column" id="_do_column">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_do_column">#</a>
+		<code><a href="source-class-CPT_columns.html#223-271" title="Go to source code">do_column</a>( <span>integer <var>$post_id</var></span>, <span>array <var>$column</var></span>, <span>string <var>$column_name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>do_column</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>do_column</p>
+
+<p>used to display the column</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$post_id</var></dt>
+					<dd><code>integer</code><br>$post_id post ID</dd>
+					<dt><var>$column</var></dt>
+					<dd><code>array</code><br>$column column args</dd>
+					<dt><var>$column_name</var></dt>
+					<dd><code>string</code><br>$column_name column name</dd>
+				</dl></div>
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Ohad Raz &lt;<a
+href="mailto:admin&#64;bainternet.info">admin&#64;<!-- -->bainternet.info</a>&gt;<br>
+				</div>
+				<h4>Since</h4>
+				<div class="list">
+						0.1<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_column_orderby" id="__column_orderby">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__column_orderby">#</a>
+		<code><a href="source-class-CPT_columns.html#273-296" title="Go to source code">_column_orderby</a>( <span>object <var>$query</var></span> )</code>
+
+		<div class="description short">
+			
+<p>_column_orderby</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>_column_orderby</p>
+
+<p>used to roder by meta keys</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$query</var></dt>
+					<dd><code>object</code><br>$query</dd>
+				</dl></div>
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Ohad Raz &lt;<a
+href="mailto:admin&#64;bainternet.info">admin&#64;<!-- -->bainternet.info</a>&gt;<br>
+				</div>
+				<h4>Since</h4>
+				<div class="list">
+						0.1<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="add_column" id="_add_column">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_add_column">#</a>
+		<code><a href="source-class-CPT_columns.html#298-327" title="Go to source code">add_column</a>( <span>string <var>$key</var></span>, <span>array <var>$args</var></span> )</code>
+
+		<div class="description short">
+			
+<p>add_column</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>add_column</p>
+
+<p>used to add column</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd><code>string</code><br>$key column id</dd>
+					<dt><var>$args</var></dt>
+					<dd><code>array</code><br>$args column arguments</dd>
+				</dl></div>
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Ohad Raz &lt;<a
+href="mailto:admin&#64;bainternet.info">admin&#64;<!-- -->bainternet.info</a>&gt;<br>
+				</div>
+				<h4>Since</h4>
+				<div class="list">
+						0.1<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="remove_column" id="_remove_column">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_remove_column">#</a>
+		<code><a href="source-class-CPT_columns.html#329-341" title="Go to source code">remove_column</a>( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+<p>remove_column</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>remove_column</p>
+
+<p>Used to remove columns</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd><code>string</code><br>$key column key to be removed</dd>
+				</dl></div>
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Ohad Raz &lt;<a
+href="mailto:admin&#64;bainternet.info">admin&#64;<!-- -->bainternet.info</a>&gt;<br>
+				</div>
+				<h4>Since</h4>
+				<div class="list">
+						0.1<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="cpt_columns" id="$cpt_columns">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-CPT_columns.html#71-77" title="Go to source code"><var>$cpt_columns</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$cpt_columns" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>$cpt_columns</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>$cpt_columns</p>
+
+<p>holds columns</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="cpt_remove_columns" id="$cpt_remove_columns">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-CPT_columns.html#79-85" title="Go to source code"><var>$cpt_remove_columns</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$cpt_remove_columns" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>$cpt_remove_columns</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>$cpt_remove_columns</p>
+
+<p>holds columns to be removed</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="cpt_sortable_columns" id="$cpt_sortable_columns">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-CPT_columns.html#87-93" title="Go to source code"><var>$cpt_sortable_columns</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$cpt_sortable_columns" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>$cpt_sortable_columns</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>$cpt_sortable_columns</p>
+
+<p>holds sortable columns</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="cpt_name" id="$cpt_name">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-CPT_columns.html#95-101" title="Go to source code"><var>$cpt_name</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">''</span></code></td>
+		<td class="description"><div>
+			<a href="#$cpt_name" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>$cpt_name</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>$cpt_name</p>
+
+<p>Holds custom post type name</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="replace" id="$replace">
+		<td class="attributes"><code>
+			public  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-CPT_columns.html#103-109" title="Go to source code"><var>$replace</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">false</span></code></td>
+		<td class="description"><div>
+			<a href="#$replace" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>$replace</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>$replace</p>
+
+<p>Should coulmns be replace (true) or added (false)</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Wordpress Plugin Boilerplate Powered API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

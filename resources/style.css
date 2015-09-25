@@ -630,3 +630,5 @@ span.l a.l:hover, span.l a.l:active, span.l a.l:focus {
 #menu > span:first-child, #menu > a:first-child, #menu > a:first-child:hover {background-color:transparent;color: transparent;}
 #menu > span:first-child, #menu > a:first-child span {background: url('https://raw.githubusercontent.com/Mte90/WordPress-Plugin-Boilerplate-Powered/master/plugin-name/assets/icon-128x128.png');content: ;height: 128px;width: 128px;display:block;}
 #menu > span:first-child, #menu > a:first-child, #menu > a:first-child:hover {background-color:transparent;color: transparent;}
+#menu > span:first-child, #menu > a:first-child span {background: url('https://raw.githubusercontent.com/Mte90/WordPress-Plugin-Boilerplate-Powered/master/plugin-name/assets/icon-128x128.png');content: ;height: 128px;width: 128px;display:block;}
+#menu > span:first-child, #menu > a:first-child, #menu > a:first-child:hover {background-color:transparent;color: transparent;}

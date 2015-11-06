@@ -6,10 +6,10 @@ read NAME
 printf "Destination folder: "
 read FOLDER
 
-printf "Include Grunt support (y/n): "
+printf "Include Grunt support (Y/n): "
 read GRUNT
 
-printf "Initialise new git repo (y/n): "
+printf "Initialise new git repo (Y/n): "
 read NEWREPO
 
 DEFAULT_NAME="Plugin Name"
@@ -21,20 +21,19 @@ CLASS=${NAME// /_}
 TOKEN=$( tr '[A-Z]' '[a-z]' <<< $CLASS)
 SLUG=${TOKEN//_/-}
 
-cp -ar $DEFAULT_SLUG $FOLDER/$SLUG
+DST_DIR="$FOLDER/$SLUG"
+
+cp -ar $DEFAULT_SLUG $DST_DIR
 
 echo "copy git files..."
-cp -ar .git[im]* $FOLDER/$SLUG
+cp -ar .git[im]* $DST_DIR
 
 cd $FOLDER/$SLUG
 
 git submodule update --recursive
-if [ "$NEWREPO" == "y" ]; then
+if [ "$NEWREPO" != "n" ]; then
 	echo "Initialising new git repo..."
-	cd ../..
 	git init
-else
-	rm -f .git*
 fi
 
 if [ "$GRUNT" == "n" ]; then
@@ -51,7 +50,7 @@ function update_file() {
 
 	# 2. change slug
 	cp $1 $1.tmp
-	sed "s/$DEFAULT_1/$1/g" $1.tmp > $1
+	sed "s/$DEFAULT_SLUG/$SLUG/g" $1.tmp > $1
 
 	# 3. change token
 	cp $1 $1.tmp
@@ -75,8 +74,8 @@ update_file $SLUG.php
 
 ## admin
 cd admin
-mv class-$DEFAULT_SLUG.php class-$SLUG.php
-update_file class-$SLUG.php
+mv class-$DEFAULT_SLUG-admin.php class-$SLUG-admin.php
+update_file class-$SLUG-admin.php
 ## admin/views
 cd views
 update_file admin.php

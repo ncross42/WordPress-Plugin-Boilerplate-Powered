@@ -4,7 +4,12 @@
 	"description": "",
 	"author": "Mte90 <mte90net@gmail.com>",
 	"devDependencies": {
+		"grunt": "*",
 		"grunt-contrib-watch": "*",
-		"grunt-contrib-compass": "*"
+		"grunt-contrib-compass": "*",
+		//"grunt-contrib-less": "*",
+		"grunt-contrib-concat": "*",
+		"grunt-contrib-uglify": "*",
+		"grunt-contrib-cssmin": "*"
 	}
 } 

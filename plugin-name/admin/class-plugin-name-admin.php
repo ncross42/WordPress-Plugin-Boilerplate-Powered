@@ -17,8 +17,6 @@
  * If you're interested in introducing public-facing
  * functionality, then refer to `class-plugin-name.php`
  *
- * @TODO: Rename this class to a proper name for your plugin.
- *
  * @package Plugin_Name_Admin
  * @author  Your Name <email@example.com>
  */
@@ -50,7 +48,7 @@ class Plugin_Name_Admin {
 	 */
 	private function __construct() {
 
-		/*
+		/**
 		 * @TODO :
 		 *
 		 * - Uncomment following lines if the admin class should only be available for super admins
@@ -59,12 +57,8 @@ class Plugin_Name_Admin {
 		  return;
 		  } */
 
-		/*
+		/**
 		 * Call $plugin_slug from public plugin class.
-		 *
-		 * @TODO:
-		 *
-		 * - Rename "Plugin_Name" to the name of your initial plugin class
 		 *
 		 */
 		$plugin = Plugin_Name::get_instance();
@@ -93,30 +87,30 @@ class Plugin_Name_Admin {
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 
-		/*
+		/**
 		 * CMB 2 for metabox and many other cool things!
 		 * https://github.com/WebDevStudios/CMB2
 		 */
 		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2/init.php' );
-		/*
+		/**
 		 * CMB2 Shortcode support 
 		 * Check on the repo for the example and documentation 
 		 * https://github.com/jtsternberg/Shortcode_Button
 		 */
 		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2-Shortcode/shortcode-button.php' );
-		/*
+		/**
 		 * CMB2 Grid 
 		 * Check on the repo for the example and documentation 
 		 * https://github.com/origgami/CMB2-grid
 		 */
 		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2-grid/Cmb2GridPlugin.php' );
 
-		/*
+		/**
 		 * Add metabox
 		 */
 		add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
 
-		/*
+		/**
 		 * Define custom functionality.
 		 *
 		 * Read more about actions and filters:
@@ -125,19 +119,19 @@ class Plugin_Name_Admin {
 		add_action( '@TODO', array( $this, 'action_method_name' ) );
 		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
 
-		/*
+		/**
 		 * Import Export settings
 		 */
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/impexp.php' );
 
-		/*
+		/**
 		 * Debug mode
 		 */
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/debug.php' );
 		$debug = new Pn_Debug( );
 		$debug->log( __( 'Plugin Loaded', $this->plugin_slug ) );
 
-		/*
+		/**
 		 * Load Wp_Contextual_Help for the help tabs
 		 */
 		add_filter( 'wp_contextual_help_docs_dir', array( $this, 'help_docs_dir' ) );
@@ -147,7 +141,7 @@ class Plugin_Name_Admin {
 		}
 		add_action( 'init', array( $this, 'contextual_help' ) );
 
-		/*
+		/**
 		 * Load Wp_Admin_Notice for the notices in the backend
 		 * 
 		 * First parameter the HTML, the second is the css class
@@ -158,7 +152,7 @@ class Plugin_Name_Admin {
 		new WP_Admin_Notice( __( 'Updated Messages' ), 'updated' );
 		new WP_Admin_Notice( __( 'Error Messages' ), 'error' );
 
-		/*
+		/**
 		 * Load PointerPlus for the Wp Pointer
 		 * 
 		 * Unique parameter is the prefix
@@ -171,7 +165,7 @@ class Plugin_Name_Admin {
 		//$pointerplus->reset_pointer();
 		add_filter( 'pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
 
-		/*
+		/**
 		 * Load CronPlus 
 		 * 
 		 */
@@ -192,7 +186,7 @@ class Plugin_Name_Admin {
 		$cronplus = new CronPlus( $args );
 		$cronplus->schedule_event();
 
-		/*
+		/**
 		 * Load CPT_Columns
 		 * 
 		 * Check the file for example
@@ -222,7 +216,7 @@ class Plugin_Name_Admin {
 	 */
 	public static function get_instance() {
 
-		/*
+		/**
 		 * @TODO :
 		 *
 		 * - Uncomment following lines if the admin class should only be available for super admins
@@ -242,10 +236,6 @@ class Plugin_Name_Admin {
 	/**
 	 * Register and enqueue admin-specific style sheet.
 	 *
-	 * @TODO:
-	 *
-	 * - Rename "Plugin_Name" to the name your plugin
-	 *
 	 * @since     1.0.0
 	 *
 	 * @return    null    Return early if no settings page is registered.
@@ -263,10 +253,6 @@ class Plugin_Name_Admin {
 
 	/**
 	 * Register and enqueue admin-specific JavaScript.
-	 *
-	 * @TODO:
-	 *
-	 * - Rename "Plugin_Name" to the name your plugin
 	 *
 	 * @since     1.0.0
 	 *
@@ -290,7 +276,7 @@ class Plugin_Name_Admin {
 	 */
 	public function add_plugin_admin_menu() {
 
-		/*
+		/**
 		 * Add a settings page for this plugin to the Settings menu.
 		 *
 		 * NOTE:  Alternative menu locations are available via WordPress administration menu functions.
@@ -307,7 +293,7 @@ class Plugin_Name_Admin {
 		$this->plugin_screen_hook_suffix = add_options_page(
 			__( 'Page Title', $this->plugin_slug ), $this->plugin_name, 'manage_options', $this->plugin_slug, array( $this, 'display_plugin_admin_page' )
 		);
-		/*
+		/**
 		 * Settings page in the menu
 		 * 
 		 */

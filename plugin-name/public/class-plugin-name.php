@@ -17,8 +17,6 @@
  * If you're interested in introducing administrative or dashboard
  * functionality, then refer to `class-plugin-name-admin.php`
  *
- * @TODO: Rename this class to a proper name for your plugin.
- *
  * @package Plugin_Name
  * @author  Your Name <email@example.com>
  */
@@ -34,10 +32,7 @@ class Plugin_Name {
 	const VERSION = '1.0.0';
 
 	/**
-	 * @TODO - Rename "plugin-name" to the name of your plugin
-	 *
 	 * Unique identifier for your plugin.
-	 *
 	 *
 	 * The variable name is used as the text domain when internationalizing strings
 	 * of text. Its value should match the Text Domain file header in the main
@@ -50,10 +45,7 @@ class Plugin_Name {
 	protected static $plugin_slug = 'plugin-name';
 
 	/**
-	 * @TODO - Rename "Plugin Name" to the name of your plugin
-	 *
 	 * Unique identifier for your plugin.
-	 *
 	 *
 	 * @since    1.0.0
 	 *

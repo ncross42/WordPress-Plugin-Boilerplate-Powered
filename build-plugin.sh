@@ -6,6 +6,12 @@ read NAME
 printf "Destination folder: "
 read FOLDER
 
+printf "Author name: "
+read AUTHOR
+
+printf "Email address: "
+read EMAIL
+
 printf "Include Grunt support (Y/n): "
 read GRUNT
 
@@ -23,17 +29,27 @@ SLUG=${TOKEN//_/-}
 
 DST_DIR="$FOLDER/$SLUG"
 
-cp -ar $DEFAULT_SLUG $DST_DIR
+if [ "$NEWREPO" == "n" ]; then
+	git submodule update --recursive
+fi
 
-echo "copy git files..."
-cp -ar .git[im]* $DST_DIR
+cp -ar $DEFAULT_SLUG $DST_DIR
 
 cd $FOLDER/$SLUG
 
-git submodule update --recursive
 if [ "$NEWREPO" != "n" ]; then
 	echo "Initialising new git repo..."
 	git init
+
+	git submodule add https://github.com/WebDevStudios/CPT_Core.git includes/CPT_Core
+	git submodule add https://github.com/WebDevStudios/Taxonomy_Core.git includes/Taxonomy_Core
+	git submodule add https://github.com/WebDevStudios/CMB2.git admin/includes/CMB2;
+	git submodule add https://github.com/jtsternberg/Shortcode_Button.git admin/includes/CMB2-Shortcode
+	git submodule add https://github.com/origgami/CMB2-grid.git admin/includes/CMB2-grid
+	git submodule add https://github.com/nathanielks/wordpress-admin-notice.git admin/includes/WP-Admin-Notice
+	git submodule add https://github.com/voceconnect/wp-contextual-help.git admin/includes/WP-Contextual-Help
+	git submodule add https://github.com/Mte90/pointerplus.git admin/includes/PointerPlus
+	git submodule add https://github.com/Mte90/CronPlus.git admin/includes/CronPlus
 fi
 
 if [ "$GRUNT" == "n" ]; then
@@ -59,6 +75,14 @@ function update_file() {
 	# 4. change class
 	cp $1 $1.tmp
 	sed "s/$DEFAULT_CLASS/$CLASS/g" $1.tmp > $1
+
+	# 5. change author
+	cp $1 $1.tmp
+	sed "s/Your Name/$AUTHOR/g" $1.tmp > $1
+
+	# 6. change email
+	cp $1 $1.tmp
+	sed "s/email@example.com/$EMAIL/g" $1.tmp > $1
 	rm $1.tmp
 }
 
@@ -92,5 +116,6 @@ update_file class-$SLUG.php
 ## public/includes
 cd includes
 update_file requirements.php
+
 
 echo "Complete!"

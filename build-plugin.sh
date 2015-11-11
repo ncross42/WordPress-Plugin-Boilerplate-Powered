@@ -62,27 +62,33 @@ echo "Updating plugin files..."
 function update_file() {
 	# 1. change name
 	cp $1 $1.tmp
-	sed "s/$DEFAULT_NAME/$NAME/g" $1.tmp > $1
+	sed "s/\<$DEFAULT_NAME\>/$NAME/g" $1.tmp > $1
+
+	# recovering for Wordpress "Plugin Name" format
+	if [ $1 == $SLUG.php ]; then
+		cp $1 $1.tmp
+		sed "s/^ \* $NAME: $NAME/ \* Plugin Name: $NAME/g" $1.tmp > $1
+	fi
 
 	# 2. change slug
 	cp $1 $1.tmp
-	sed "s/$DEFAULT_SLUG/$SLUG/g" $1.tmp > $1
+	sed "s/\<$DEFAULT_SLUG\>/$SLUG/g" $1.tmp > $1
 
 	# 3. change token
 	cp $1 $1.tmp
-	sed "s/$DEFAULT_TOKEN/$TOKEN/g" $1.tmp > $1
+	sed "s/\<$DEFAULT_TOKEN\>/$TOKEN/g" $1.tmp > $1
 
 	# 4. change class
 	cp $1 $1.tmp
-	sed "s/$DEFAULT_CLASS/$CLASS/g" $1.tmp > $1
+	sed "s/\<$DEFAULT_CLASS\>/$CLASS/g" $1.tmp > $1
 
 	# 5. change author
 	cp $1 $1.tmp
-	sed "s/Your Name/$AUTHOR/g" $1.tmp > $1
+	sed "s/\<Your Name\>/$AUTHOR/g" $1.tmp > $1
 
 	# 6. change email
 	cp $1 $1.tmp
-	sed "s/email@example.com/$EMAIL/g" $1.tmp > $1
+	sed "s/\<email@example.com\>/$EMAIL/g" $1.tmp > $1
 	rm $1.tmp
 }
 
@@ -96,26 +102,33 @@ update_file uninstall.php
 mv $DEFAULT_SLUG.php $SLUG.php
 update_file $SLUG.php
 
+## includes
+update_file includes/load_textdomain.php
+update_file includes/widgets/sample.php
+
 ## admin
 cd admin
 mv class-$DEFAULT_SLUG-admin.php class-$SLUG-admin.php
 update_file class-$SLUG-admin.php
-## admin/views
-cd views
-update_file admin.php
+## admin/views/admin.php
+update_file views/admin.php
+## admin/includes/impexp.php
+update_file includes/impexp.php
+cd ../
 
 ## languages
-cd ../../languages
+cd languages
 mv $DEFAULT_SLUG.pot $SLUG.pot
 update_file $SLUG.pot
+cd ../
+
 
 ## public
-cd ../public
+cd public
 mv class-$DEFAULT_SLUG.php class-$SLUG.php
 update_file class-$SLUG.php
-## public/includes
-cd includes
-update_file requirements.php
-
+## public/includes/requirements.php
+update_file includes/requirements.php
+cd ../
 
 echo "Complete!"

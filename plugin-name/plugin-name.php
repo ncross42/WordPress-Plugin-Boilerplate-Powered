@@ -13,16 +13,16 @@
  * @copyright 2015 Your Name or Company Name
  *
  * @wordpress-plugin
- * Plugin Name:       Plugin Name
- * Plugin URI:        @TODO
- * Description:       @TODO
- * Version:           1.0.0
- * Author:            Your Name
- * Author URI:        email@example.com
- * Text Domain:       plugin-name
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path:       /languages
+ * Plugin Name: Plugin Name
+ * Plugin URI:  @TODO
+ * Description: @TODO
+ * Version:     1.0.0
+ * Author:      Your Name
+ * Author URI:  email@example.com
+ * Text Domain: plugin-name
+ * License:     GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * Domain Path: /languages
  * WordPress-Plugin-Boilerplate-Powered: v1.1.5
  */
 
@@ -111,7 +111,7 @@ add_action( 'plugins_loaded', array( 'Plugin_Name', 'get_instance' ), 9999 );
  *   ...
  * }
  *
- * The code below is intended to to give the lightest footprint possible.
+ * The code below is intended to give the lightest footprint possible.
  */
 
 if ( is_admin() && (!defined( 'DOING_AJAX' ) || !DOING_AJAX ) ) {
